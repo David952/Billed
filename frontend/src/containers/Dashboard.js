@@ -144,8 +144,9 @@ export default class {
         .html("")
       this.counter ++
     }
-
+	// Suppression du gestionnaire de clic existant appliquée
     bills.forEach(bill => {
+	  $(`#open-bill${bill.id}`).off("click");
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
 
